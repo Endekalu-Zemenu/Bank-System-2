@@ -3,6 +3,7 @@
 #include <string>
 
 using namespace std;
+bool loggedIn = false; // Track login status
 
 struct User {
     string name;
@@ -55,7 +56,7 @@ void addClients() {
     newAccount.accountNumber = newUser.accountNumber;
     file << newAccount.balance << endl;
     transaction1.balance = newAccount.balance;
-    file2 << "INitial balance: " << transaction1.balance << endl;
+    file2 << "Initial balance: " << transaction1.balance << endl;
 
     cout << endl;
     cout << "Account Created Successfully!!" << endl;
@@ -81,7 +82,7 @@ int main() {
     // Close the file
     file.close();
 
-    bool loggedIn = false; // Track login status
+    
 
     do {
         cout << "1. Login" << endl;
@@ -181,6 +182,7 @@ void display(Account &currentAccount, User &currentUser) {
                 break;
             case 4:
                 cout << "Thank you for using our service." << endl;
+                loggedIn = false;
                 break;
             default:
                 cout << "Invalid choice. Please try again!" << endl;
