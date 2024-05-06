@@ -8,7 +8,7 @@ struct User {
     string name;
     int accountNumber;
     int accountPass;
-};
+}
 
 
 struct Account {
